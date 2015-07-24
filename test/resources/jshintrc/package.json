@@ -1,0 +1,23 @@
+{
+  "jshintConfig": {
+    "eqeqeq": true,
+    "es3": true,
+    "forin": true,
+    "freeze": true,
+    "futurehostile": true,
+    "latedef": "nofunc",
+    "noarg": true,
+    "nonbsp": true,
+    "nonew": true,
+    "singleGroups": true,
+    "strict": true,
+    "undef": true,
+    "unused": true,
+    "node": true,
+    "globals": {
+      "require": true,
+      "module": true
+    },
+    "predef": ["JSON"]
+  }
+}
