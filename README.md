@@ -72,9 +72,9 @@ $ npm run buenos-jshint
      * - a file path to the rules json
      * - an object containing the rules
      * When left out it will follow this order to get its config:
-     * - a .jshintrc file in current folder or up
+     * - a .jshintrc file in file folder or up
      * - any parent package.json with a jshintConfig property
-     * - embedded config (default)
+     * - embedded config
      */
     jshintConfig: './myConfig.json'
 }
@@ -181,17 +181,15 @@ function reporterWithConfig (log, config) {
 
 ```
 {
-    // where did the jshint config come from?
-    "jshintConfig": "embedded", // embedded, custom, or file path
     
     // how many files are checked?
     "totalCount": 7,
     
+    // how many total errors were found?
+    "totalErrorCount": 0,
+        
     // how many files passed?
     "successCount": 7,
-    
-    // how many files failed?
-    "failureCount": 0,
     
     // object of files checked
     "files": {
@@ -199,6 +197,9 @@ function reporterWithConfig (log, config) {
         // file name
         "index.js": {
         
+            // where did the jshint config come from?
+            "jshintConfig": "embedded", // embedded, custom, or file path
+            
             // how many errors were found in this file?
             "errorCount": 0,
             
