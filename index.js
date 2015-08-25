@@ -14,7 +14,7 @@ module.exports.embeddedConfig = embeddedConfig;
 
 var DEFAULT_CONFIG = {
     reporters: [
-        [$reporter, { path: './reports/jshint.json' }]
+        [$reporter, { path: './reports/jshint-report.json' }]
     ],
     src: [
         './**/*.js',
