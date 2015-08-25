@@ -1,7 +1,6 @@
 'use strict';
 
 var $reporter = require('./lib/reporter');
-var $findConfig = require('./lib/findConfig');
 var $processor = require('./lib/processor');
 
 var $path = require('path');
@@ -33,10 +32,11 @@ function BuenosJshint (options) {
         self.options = _checkOptions(options);
 
         self.log = {
-            jshintConfig: self.options.jshintConfig.source,
             totalCount: 0,
+            totalErrorCount: 0,
             successCount: 0,
             failureCount: 0,
+            errorCount: 0,
             files: {}
         };
 
@@ -77,7 +77,8 @@ function BuenosJshint (options) {
         options = $extend({}, DEFAULT_CONFIG, options || {});
 
         if (!options.jshintConfig) {
-            options.jshintConfig = $findConfig();
+            // search on the fly for each file
+            options.jshintConfig = false;
         }
         else if (typeof options.jshintConfig === 'string') {
             // must be a path to a config file.. try to read it
