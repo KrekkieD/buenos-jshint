@@ -1,6 +1,6 @@
 {
   "name": "buenos-jshint",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "JSHINT Node wrapper",
   "main": "index.js",
   "bin": {
