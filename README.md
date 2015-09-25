@@ -2,6 +2,8 @@
 
 A NodeJS wrapper around the [JSHINT](https://www.npmjs.com/package/jshint) code linter, for your convenience.
 
+Part of the buenos linting family: [buenos-jshint](https://www.npmjs.com/package/buenos-jshint), [buenos-jscs](https://www.npmjs.com/package/buenos-jscs), [buenos-htmllint](https://www.npmjs.com/package/buenos-htmllint).
+
 ## Installing
 
 ```
@@ -52,7 +54,7 @@ $ npm run buenos-jshint
         someFunction,
         
         // default value:
-        [ $buenosJshint.reporter, { path: './reports/jshint.json' }]
+        [ $buenosJshint.reporter, { path: './reports/buenos-jshint.json' }]
         
     ],
     
@@ -121,7 +123,7 @@ var $buenosJshint = require('buenos-jshint');
 
 new $buenosJshint({
     reporters: [
-        [ $buenosJshint.reporter, { path: './reports/jshint.json' }],
+        [ $buenosJshint.reporter, { path: './reports/buenos-jshint.json' }],
         myReporter
     ]
 });
@@ -191,6 +193,9 @@ function reporterWithConfig (log, config) {
     // how many files passed?
     "successCount": 7,
     
+    // how many files failed?
+    "failureCount": 1,
+    
     // object of files checked
     "files": {
     
@@ -204,7 +209,19 @@ function reporterWithConfig (log, config) {
             "errorCount": 0,
             
             // array of errors found in this file
-            "errors": [],
+            "errors": [
+                {
+                    "id": "(error)",
+                    "raw": "Unnecessary semicolon.",
+                    "code": "W032",
+                    "evidence": ";",
+                    "line": 2,
+                    "character": 1,
+                    "scope": "(main)",
+                    "reason": "Unnecessary semicolon.",
+                    "filename": "\\malformed\\syntaxerror.js"
+                }
+            ],
             
             // did the file pass the check?
             "passed": true

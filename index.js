@@ -14,7 +14,7 @@ module.exports.embeddedConfig = embeddedConfig;
 
 var DEFAULT_CONFIG = {
     reporters: [
-        [$reporter, { path: './reports/jshint-report.json' }]
+        [$reporter, { path: './reports/buenos-jshint.json' }]
     ],
     src: [
         './**/*.js',
@@ -36,7 +36,6 @@ function BuenosJshint (options) {
             totalErrorCount: 0,
             successCount: 0,
             failureCount: 0,
-            errorCount: 0,
             files: {}
         };
 

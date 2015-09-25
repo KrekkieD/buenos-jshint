@@ -13,14 +13,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://krekkied@github.com/KrekkieD/buenos-jshint.git"
+    "url": "https://github.com/KrekkieD/buenos-jshint.git"
   },
   "keywords": [
-    "node",
-    "jshint"
+    "buenos-lint",
+    "lint",
+    "hint",
+    "javascript",
+    "jshint",
+    "jslint",
+    "style"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Gregory Cowan <g.cowan@amnzero.nl>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/KrekkieD/buenos-jshint/issues"
   },
@@ -29,7 +34,7 @@
     "colors": "^1.1.2",
     "extend": "^3.0.0",
     "file": "^0.2.2",
-    "glob-stream": "^5.0.0",
+    "globby": "^3.0.1",
     "jshint": "^2.8.0",
     "mkdirp": "^0.5.1",
     "q": "^1.4.1",
