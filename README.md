@@ -64,7 +64,8 @@ $ npm run buenos-jshint
      */
     src: [
         './**/*.js',
-        '!./node_modules/**/*',
+        '!./**/node_modules/**/*',
+        '!./**/bower_components/**/*',
         '!./**/*.spec.js'
     ],
         
