@@ -61,6 +61,26 @@ describe('findConfig', function () {
 
     });
 
+    it('should be able to extend the config', function (done) {
+
+        var configDir = $path.resolve(projectRoot, 'test/resources/extended/deeper/even-deeper');
+
+        var instance = new $buenosJshint({
+            src: './test/resources/extended/**/*.js',
+            reporters: false
+        });
+
+        instance.promise.then(function () {
+
+            expect(instance.log.files['test/resources/extended/deeper/even-deeper/srcFile.js'].jshintConfig)
+                .toEqual($path.resolve(configDir, '.jshintrc'));
+
+            done();
+
+        });
+
+    });
+
     xit('dump of result', function (done) {
 
         var instance = new $buenosJshint({
